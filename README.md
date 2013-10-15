@@ -26,11 +26,11 @@ By default, Heap lets you retroactively define events in terms of DOM event type
 
 But this would be a much more streamlined experience if we didn't have to name these events at all. Luckily, in Backbone, every View's `events` hash names these user interactions for us!
 
-This lets us eliminate the friction of finding/naming events like `addToShoppingCart`. Instead, your Heap account is instantly populated with understandable activity. No extra code required.
+This lets us eliminate the friction of fishing for events like `addToShoppingCart`. Instead, your Heap account is instantly populated with easy-to-understand activity. All without any extra code.
 
 ## Example
 
-Let's take the following example Backbone.View.
+Let's say we've written the following Backbone.View.
 
 ```javascript
 var DocumentRow = Backbone.View.extend({
@@ -43,4 +43,4 @@ var DocumentRow = Backbone.View.extend({
 });
 ```
 
-Every time a `click .icon` event occurs, Backbone.Heap sends an `open` event to your Heap account. Likewise for `openEditDialog` and `destroy`.
+Every time a `click .icon` event occurs, an event named `open` is sent to your Heap account. Likewise for `openEditDialog` and `destroy`.
