@@ -18,7 +18,7 @@
       heapTrack = (function(method) {
         var _this = this;
         return function() {
-          return heap.track(method);
+          return typeof heap !== "undefined" && heap !== null ? heap.track(method) : void 0;
         };
       })(method);
       if (selector === '') {
