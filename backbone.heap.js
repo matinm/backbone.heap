@@ -1,5 +1,5 @@
 (function() {
-  var View, _,
+  var View, undelegate, _,
     __slice = [].slice;
 
   _ = this._;
@@ -27,6 +27,16 @@
         this.$el.on(eventName, selector, heapTrack);
       }
     }
+    return result;
+  };
+
+  undelegate = Backbone.View.prototype.undelegateEvents;
+
+  Backbone.View.prototype.undelegateEvents = function() {
+    var args, result;
+    args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+    result = undelegate.apply(this, args);
+    this.$el.off(".heap.delegateEvents" + this.cid);
     return result;
   };
 
