@@ -12,7 +12,7 @@ Backbone.View::constructor = (args...) ->
     eventName += ".heap.delegateEvents#{@cid}"
     heapTrack = do (method) ->
       # TODO (matin): Avoid double-counting events.
-      () => heap.track method
+      () => heap?.track method
 
     if selector is ''
       @$el.on eventName, heapTrack
