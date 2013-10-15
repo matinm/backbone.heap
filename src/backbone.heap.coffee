@@ -1,6 +1,6 @@
-_    = @_
-View = Backbone.View::constructor
+_ = @_
 
+View = Backbone.View::constructor
 Backbone.View::constructor = (args...) ->
   result = View.apply @, args
   events = _.result @, 'events'
@@ -19,4 +19,10 @@ Backbone.View::constructor = (args...) ->
     else
       @$el.on eventName, selector, heapTrack
 
+  return result
+
+undelegate = Backbone.View::undelegateEvents
+Backbone.View::undelegateEvents = (args...) ->
+  result = undelegate.apply @, args
+  @$el.off ".heap.delegateEvents#{@cid}"
   return result
