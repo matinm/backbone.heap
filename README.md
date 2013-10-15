@@ -2,6 +2,8 @@
 
 A drop-in plugin that automatically captures all your Backbone.View events for analysis in [Heap](https://heapanalytics.com).
 
+Tested on Backbone 1.1.0. NOT YET PRODUCTION-READY.
+
 ## Setup
 1. Add [Heap](https://heapanalytics.com/signup) to your website.
 2. Include `backbone.heap.js` in your site's `<head>` directly *after* including `backbone.js`:
